@@ -20,20 +20,21 @@ export async function getStaticProps() {
   const sheet = doc.sheetsByIndex[0];
   const rows = await sheet?.getRows();
   const filteredRows = rows?.filter((row) => row?.get("Timestamp") !== "");
-
+  const items = filteredRows?.map((row) => ({
+    timestamp: row?.get("Timestamp") as string,
+    name: row?.get("Nama") as string,
+    class: row?.get("Kelas") as string,
+    phone: row?.get("Nombor Telefon (Dalam format:  01X-XXXXXXX)") as string,
+    book: row?.get("Nama buku yang jual") as string,
+    image: row?.get("Gambar buku") as string,
+    condition: row?.get("Keadaan buku") as string,
+    price: row?.get("Harga") as string,
+    sold: row?.get("Sold") as string,
+  })) as Item[];
+  console.log(items);
   return {
     props: {
-      items: filteredRows?.map((row) => ({
-        timestamp: row?.get("Timestamp") as string,
-        name: row?.get("Nama") as string,
-        class: row?.get("Kelas") as string,
-        phone: row?.get("Nombor Telefon") as string,
-        book: row?.get("Nama buku yang jual") as string,
-        image: row?.get("Gambar buku") as string,
-        condition: row?.get("Keadaan buku") as string,
-        price: row?.get("Harga") as string,
-        sold: row?.get("Sold") as string,
-      })) as Item[],
+      items: items,
     },
     revalidate: 5,
   };
