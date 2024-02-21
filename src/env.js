@@ -8,7 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    GOOGLE_SERVICE_ACCOUNT_CREDENTIALS: z.string(),
+    GOOGLE_SERVICE_ACCOUNT_EMAIL: z.string(),
+    GOOGLE_PRIVATE_KEY: z.string(),
   },
 
   /**
@@ -26,8 +27,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    GOOGLE_SERVICE_ACCOUNT_CREDENTIALS:
-      process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS,
+    GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
