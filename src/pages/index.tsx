@@ -31,7 +31,6 @@ export async function getStaticProps() {
     price: row?.get("Harga") as string,
     sold: row?.get("Sold") as string,
   })) as Item[];
-  console.log(items);
   return {
     props: {
       items: items,
