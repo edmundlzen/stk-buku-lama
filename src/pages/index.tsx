@@ -62,14 +62,17 @@ export default function Home({ items }: { items: Item[] }) {
           href="https://em-content.zobj.net/source/apple/354/books_1f4da.png"
         />
       </Head>
-      <main className="heropattern-leaf-slate-300 flex min-h-screen flex-col items-center justify-start bg-slate-200">
+      <main className="flex min-h-screen flex-col items-center justify-start bg-slate-200 heropattern-leaf-slate-300">
         <h1 className="mt-8 text-3xl font-semibold text-slate-900">
           MPPT6 STK Buku Lama
         </h1>
-        <button className="mt-4 w-3/4 rounded-md bg-slate-800 p-2 text-white">
-          <a href="https://forms.gle/FN6iUyVFPu67J8DG9" target="_blank">
-            Sell your book
-          </a>
+        <button
+          className="mt-4 w-3/4 rounded-md bg-slate-800 p-2 text-white"
+          onClick={() => {
+            window.open("https://forms.gle/FN6iUyVFPu67J8DG9", "_blank");
+          }}
+        >
+          Sell your book
         </button>
         <div className="m-6 mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (
