@@ -14,4 +14,6 @@ const doc = new GoogleSpreadsheet(
   jwt,
 );
 
+await doc.loadInfo();
+
 export default doc;
