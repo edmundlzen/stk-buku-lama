@@ -39,7 +39,10 @@ export default function Home({ items }: { items: Item[] }) {
           name="description"
           content="Buku buku lama untuk pelajar tingkatan 6 STK"
         />
-        <link rel="icon" href="https://emojipedia.org/apple/ios-16.4/books" />
+        <link
+          rel="icon"
+          href="https://em-content.zobj.net/source/apple/354/books_1f4da.png"
+        />
       </Head>
       <main className="heropattern-leaf-slate-300 flex min-h-screen flex-col items-center justify-start bg-slate-200">
         <h1 className="mt-8 text-3xl font-semibold text-slate-900">
