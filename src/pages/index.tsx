@@ -19,7 +19,15 @@ export async function getStaticProps() {
   // Get items
   const sheet = doc.sheetsByIndex[0];
   const rows = await sheet?.getRows();
-  const filteredRows = rows?.filter((row) => row?.get("Timestamp") !== "");
+  const filteredRows = rows
+    ?.filter((row) => row?.get("Timestamp") !== "")
+    .filter((row) => row?.get("Sold") === "FALSE")
+    .sort((a, b) => {
+      // 2/21/2024 9:21:58
+      const dateA = moment(a?.get("Timestamp") as string, "M/D/YYYY HH:mm:ss");
+      const dateB = moment(b?.get("Timestamp") as string, "M/D/YYYY HH:mm:ss");
+      return dateB.diff(dateA);
+    });
   const items = filteredRows?.map((row) => ({
     timestamp: row?.get("Timestamp") as string,
     name: row?.get("Nama") as string,
@@ -31,6 +39,7 @@ export async function getStaticProps() {
     price: row?.get("Harga") as string,
     sold: row?.get("Sold") as string,
   })) as Item[];
+
   return {
     props: {
       items: items,
