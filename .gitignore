@@ -40,3 +40,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# keys
+mppt6-stk-sheets-acc-key.json
