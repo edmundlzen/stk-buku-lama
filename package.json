@@ -16,6 +16,7 @@
     "@trpc/next": "^10.43.6",
     "@trpc/react-query": "^10.43.6",
     "@trpc/server": "^10.43.6",
+    "@vercel/analytics": "^1.2.2",
     "google-auth-library": "^9.6.3",
     "google-spreadsheet": "^4.1.1",
     "moment": "^2.30.1",
