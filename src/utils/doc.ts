@@ -14,6 +14,13 @@ const doc = new GoogleSpreadsheet(
   jwt,
 );
 
+const voucher_doc = new GoogleSpreadsheet(
+  "12qXdnBbBF4Q-X-iL130S06IVGS8xgJLH-vA0p73svDQ",
+  jwt,
+);
+
 await doc.loadInfo();
+await voucher_doc.loadInfo();
 
 export default doc;
+export { voucher_doc };
