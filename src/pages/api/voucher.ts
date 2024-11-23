@@ -32,12 +32,12 @@ export default async function handler(
       ?.filter(
         (row) =>
           (row?.get("KAD PENGENALAN") as string).trim().replaceAll("-", "") ===
-          ic,
+          ic.trim().replaceAll("-", ""),
       )
       .filter(
         (row) =>
           (row?.get("ID DELIMA") as string).trim().toUpperCase() ===
-          id_delima.toUpperCase(),
+          id_delima.trim().toUpperCase(),
       );
 
     if (!matching_rows || matching_rows?.length < 1) {
