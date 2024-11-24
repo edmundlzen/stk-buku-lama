@@ -48,7 +48,11 @@ export default async function handler(
     // Return the voucher code
     const voucherCode =
       (matching_rows[0]?.get("CODE BAUCAR") as string) ?? "Not Found";
+
     res.status(200).json({ message: "Success", voucherCode });
+
+    matching_rows[0]?.set("CLAIMED", true);
+    await matching_rows[0]?.save();
   } catch (error) {
     console.error("Error accessing Google Sheets:", error);
     res.status(500).json({ message: "Internal server error" });
