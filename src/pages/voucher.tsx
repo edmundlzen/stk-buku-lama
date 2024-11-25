@@ -55,10 +55,10 @@ export default function Voucher() {
   return (
     <>
       <Head>
-        <title>MPPT6 STK - Voucher Buku Kota</title>
+        <title>Penebusan Baucar Buku YDN 2024</title>
         <meta
           name="description"
-          content="Voucher Buku Kota untuk pelajar tingkatan 6 STK"
+          content="Penebusan Baucar Buku YDN 2024 untuk pelajar tingkatan 6 STK"
         />
         <link
           rel="icon"
@@ -67,7 +67,7 @@ export default function Voucher() {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-start bg-slate-100 p-6 text-center heropattern-leaf-slate-200">
         <h1 className="text-2xl font-semibold text-slate-900">
-          MPPT6 STK - Voucher Buku Kota
+          Penebusan Baucar Buku YDN 2024
         </h1>
         <div className="mt-4 flex flex-col items-start font-bold">
           <label id="ic" className="w-full text-left">
